@@ -99,7 +99,7 @@
 					// Video - projections
 			        awe.projections.add({
 			          id:'n',
-			          geometry:{ shape:'rectangle', x:200, y:100, },
+			          geometry:{ shape:'cube', x:120, y:100, z:100, },
 			          position: { x:100, y:1, z:1 },
 			          material:{
 			            type: 'phong',
@@ -132,13 +132,7 @@
 					  geometry: { shape:'cube', x:30, y:30, z:30 },
 					  material: { color:0xFFFFFF, opacity:1.0, transparent:true, wireframe:false, fog:true },
 					  texture: { path:'locationa.png' },
-					  visible: true,
-					  cast_shadow: true,
-					  receive_shadow: true,
 			        }, { poi_id: 'south_east' });
-
-			          id: 'projection_name',
-
 
 			        awe.projections.add({
 			          id:'s',
