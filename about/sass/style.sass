@@ -1,0 +1,153 @@
+*,*::before,*::after
+  box-sizing: border-box
+  outline: none
+
+$pink: #f26060
+$green: #1bcc87
+$lightblue: #9ab7c2
+$darkblue: #3e454d
+$orange: #ff8071
+$primary-color: $pink
+$font: 'Nunito', sans-serif
+$sub-font: 'Ubuntu', sans-serif
+
+%transition-normal
+  transition: all 1s cubic-bezier(1.000, -0.565, 0.075, 1.495)
+%transition-slow
+  transition: all .5s ease-in-out
+
+
+h1,h2,p,button
+  margin: 10px 0
+  opacity: 0
+
+h2
+  font-size: 65px
+  
+p
+  font-size: 24px
+  font-family: $sub-font
+  font-weight: 300
+
+body
+  text-align: center
+  background: $primary-color
+  color: #fff
+  font-family: $font
+
+.intro
+  width: 100vw
+  height: 100vh
+  overflow: hidden
+  position: relative
+  
+  
+  > div
+    width: 100%
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    position: absolute
+    top: 0
+    left: 0
+    transform-origin: top left
+    padding: 20px
+    
+    .slide-content
+      display: inline-block
+  
+  
+.slide-a
+  background: $pink
+  h1
+    font-size: 70px
+
+.slide-b
+  background: $green
+  @extend %transition-slow
+  h2
+    transform: translateY(-200px)
+    @extend %transition-normal
+  p
+    transform: translateY(200px)
+    @extend %transition-normal
+    
+.slide-c
+  background: $darkblue
+  @extend %transition-slow
+  
+  h2,p
+    transform: scale(.4)
+    @extend %transition-normal
+  p
+    display: inline-block
+    &::after
+      content: ""
+      display: inline-block
+      width: 6px
+      height: 6px
+      border-radius: 50%
+      background: #fff
+      margin: 0 10px
+    &:last-of-type::after
+      display: none
+    
+.slide-d
+  background: $orange
+  h2,p
+    @extend %transition-slow
+  p
+    display: inline-block
+  
+  a
+    color: #CC584C
+    display: inline-block
+    text-decoration: none
+    &:hover::after
+      width: 100%
+    &::after
+      content: ""
+      display: block
+      width: 0
+      height: 1px
+      background: #CC584C
+      transition: all .3s
+  button
+    width: 100px
+    height: 100px
+    line-height: 100px
+    border: none
+    color: #fff
+    border-radius: 50%
+    text-align: center
+    background: #CC584C
+    margin-top: 20px
+    border: 2px solid transparent
+    transition: all .3s ease-in-out
+    transform: scale(.7)
+    &:hover
+      background: none
+      border: 2px solid #CC584C
+      color: #CC584C
+      
+    
+    
+@media screen and (max-width: 768px)
+  .slide-a h1
+    font-size: 30px
+  h2
+    font-size: 30px
+  p
+    font-size: 17px
+    display: block !important
+    &::after
+      display: none !important
+    
+  .slide-d button
+    width: 70px
+    height: 70px
+    line-height: 70px
+    margin-top: 0
+    font-size: 14px
+    
