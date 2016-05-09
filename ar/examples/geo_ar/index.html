@@ -99,7 +99,7 @@
 							// Video - projections
 			        awe.projections.add({
 			          id:'n',
-			          geometry:{ shape:'cube', x:50, y:50, z:50 },
+			          geometry:{ shape:'cube', x:100, y:100, z:100 },
                 rotation:{ x:30, y:30, z:0 },
 			          material:{
 			            type: 'phong',
@@ -111,7 +111,7 @@
 							// Picture - projections
 			        awe.projections.add({
 			          id:'ne',
-			          geometry:{ shape:'sphere', radius:10 },
+			          geometry:{ shape:'cube', x:70, y:70, z:70 },
 			          material:{
 			            type: 'phong',
 			            color:0xCCCCCC,
@@ -147,7 +147,7 @@
 			            type: 'phong',
 			            color:0xFFFFFF,
 			          },
-								texture: { path: 'eventb.png' },								
+								texture: { path: 'eventb.png' },
 			        }, { poi_id: 'south' });
 
 			        awe.projections.add({
@@ -161,12 +161,13 @@
 
 			        awe.projections.add({
 			          id:'w',
-			          geometry:{ shape:'cube', x:50, y:50, z:50 },
+			          geometry:{ shape:'cube', x:150, y:0, z:0 },
                 rotation:{ x:30, y:30, z:0 },
 			          material:{
 			            type: 'phong',
 			            color:0x0000FF,
 			          },
+								texture: { path: 'elephants-dream.webm' },
 			        }, { poi_id: 'west' });
 
 			        awe.projections.add({
