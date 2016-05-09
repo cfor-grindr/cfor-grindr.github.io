@@ -96,40 +96,33 @@
 			        awe.pois.add({ id:'north_west', position: { x:-200, y:0, z:200 } });
 
 			        // add projections to each of the pois
-							// Video - projections
+					// Video - projections
 			        awe.projections.add({
 			          id:'n',
-			          geometry:{ shape:'cube', x:100, y:100, z:100 },
+			          geometry:{ shape:'rectangle', x:100, y:70, },
 			          position: { x:1, y:1, z:1 },
-                	  rotation:{ x:30, y:30, z:0 },
 			          material:{
 			            type: 'phong',
-			            color:0xFF0000,
+			            color:0xFFFFFF,
 			          },
 					  texture: { path: 'big-buck-bunny_trailer.webm' },
 			        }, { poi_id: 'north' });
 
-							// Picture - projections
+					// Picture - projections
 			        awe.projections.add({
 			          id:'ne',
 			          geometry:{ shape:'cube', x:70, y:70, z:70 },
-			          position: { x:100, y:1, z:1 },
-			          material:{
-			            type: 'phong',
-			            color:0xCCCCCC,
-			          },
+			          position: { x:300, y:1, z:1 },
+			          material:{ type: 'phong', color:0xCCCCCC, },
 					  texture: { path: 'eventa.png' },
 			        }, { poi_id: 'north_east' });
 
-							// 3D - projections
+					// 3D - projections
 			        awe.projections.add({
 			          id:'e',
-			          geometry:{ shape:'cube', x:100, y:100, z:100 },
-                	  rotation:{ x:30, y:30, z:0 },
-			          material:{
-			            type: 'phong',
-			            color:0x00FF00,
-			          },
+			          geometry:{ shape:'cube', x:70, y:70, z:70 },
+			          position: { x:500, y:100, z:1 },
+			          material:{ type: 'phong', color:0xCCCCCC, },
 					  texture: { path: 'eventc.png' },
 			        }, { poi_id: 'east' });
 
@@ -138,8 +131,8 @@
 					  scale: { x:1, y:1, z:1 },
 					  position: { x:1, y:1, z:1 },
 					  rotation: { x:0, y:0, z:0 },
-					  geometry: { shape:'cube', x:10, y:10, z:10 },
-					  material: { color:0xFF0000, opacity:1.0, transparent:true, wireframe:false, fog:true },
+					  geometry: { shape:'cube', x:30, y:30, z:30 },
+					  material: { color:0xFFFFFF, opacity:1.0, transparent:true, wireframe:false, fog:true },
 					  texture: { path:'locationa.png' },
 					  visible: true,
 					  cast_shadow: true,
@@ -151,12 +144,9 @@
 
 			        awe.projections.add({
 			          id:'s',
-			          geometry:{ shape:'cube', x:50, y:50, z:50 },
-                	  rotation:{ x:30, y:30, z:0 },
-			          material:{
-			            type: 'phong',
-			            color:0xFFFFFF,
-			          },
+			          geometry:{ shape:'cube', x:70, y:70, z:70 },
+			          position: { x:200, y:1, z:1 },
+			          material:{ type: 'phong', color:0xCCCCCC, },
 					  texture: { path: 'eventb.png' },
 			        }, { poi_id: 'south' });
 
@@ -172,11 +162,10 @@
 
 			        awe.projections.add({
 			          id:'w',
-			          geometry:{ shape:'cube', x:150, y:100, z:100 },
-                	  rotation:{ x:30, y:30, z:0 },
+			          geometry:{ shape:'cube', x:10, y:10, z:10 },
 			          material:{
 			            type: 'phong',
-			            color:0x0000FF,
+			            color:0xFFFFFF,
 			          },
 						texture: { path: 'elephants-dream.webm' },
 			        }, { poi_id: 'west' });
