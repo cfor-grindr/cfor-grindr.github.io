@@ -77,7 +77,7 @@
                 awe.projections.update({ // rotate clicked object by 180 degrees around x and y axes over 10 seconds
                   data:{
                     animation: {
-                      duration: 10,
+                      duration: 5,
                     },
                     rotation:{ y: p.rotation.y+180, x: p.rotation.x+180 }
                   },
@@ -122,22 +122,24 @@
 							// 3D - projections
 			        awe.projections.add({
 			          id:'e',
-			          geometry:{ shape:'cube', x:50, y:50, z:50 },
+			          geometry:{ shape:'cube', x:100, y:100, z:100 },
                 rotation:{ x:30, y:30, z:0 },
 			          material:{
 			            type: 'phong',
 			            color:0x00FF00,
 			          },
+								texture: { path: 'eventc.png' },
 			        }, { poi_id: 'east' });
 
-			        // awe.projections.add({
-			        //   id:'se',
-			        //   geometry:{ shape:'sphere', radius:10 },
-			        //   material:{
-			        //     type: 'phong',
-			        //     color:0xCCCCCC,
-			        //   },
-			        // }, { poi_id: 'south_east' });
+			        awe.projections.add({
+			          id:'se',
+			          geometry:{ shape:'sphere', radius:30 },
+			          material:{
+			            type: 'phong',
+			            color:0xCCCCCC,
+			          },
+								texture: { path: 'locationa.png' },
+			        }, { poi_id: 'south_east' });
 
 			        awe.projections.add({
 			          id:'s',
@@ -150,14 +152,15 @@
 								texture: { path: 'eventb.png' },
 			        }, { poi_id: 'south' });
 
-			        // awe.projections.add({
-			        //   id:'sw',
-			        //   geometry:{ shape:'sphere', radius:10 },
-			        //   material:{
-			        //     type: 'phong',
-			        //     color:0xCCCCCC,
-			        //   },
-			        // }, { poi_id: 'south_west' });
+			        awe.projections.add({
+			          id:'sw',
+								geometry:{ shape:'cube', x:80, y:80, z:80 },
+			          material:{
+			            type: 'phong',
+			            color:0xCCCCCC,
+			          },
+								texture: { path: 'eventd.png' },
+			        }, { poi_id: 'south_west' });
 
 			        awe.projections.add({
 			          id:'w',
@@ -172,11 +175,12 @@
 
 			        awe.projections.add({
 			          id:'nw',
-			          geometry:{ shape:'sphere', radius:10 },
+								geometry:{ shape:'cube', x:150, y:100, z:100 },
 			          material:{
 			            type: 'phong',
 			            color:0xCCCCCC,
 			          },
+								texture: { path: 'evente.png' },
 			        }, { poi_id: 'north_west' });
 
             },
