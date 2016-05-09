@@ -7,83 +7,6 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel='stylesheet prefetch' href='css/animate.css'>
     <link rel="stylesheet" href="css/style.css">
-
-    <script src="js/geoPosition.js" type="text/javascript" charset="utf-8"></script>
-
-
-    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
-
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.2/fullcalendar.min.js"></script>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.2/fullcalendar.min.css" />
-    <link rel="stylesheet" media="print" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.2/fullcalendar.print.css" />
-
-    <script>
-    $(document).ready(function() {
-
-      var latitude;
-      var longitude;
-
-        if(geoPosition.init()){
-          geoPosition.getCurrentPosition(success_callback,error_callback,{enableHighAccuracy:true});
-        }
-        else{
-          //alert("Functionality not available");
-        }
-
-        function success_callback(p)
-        {
-          latitude = p.coords.latitude;
-          longitude = p.coords.longitude;
-          //alert('lat='+ latitude +'; \nlon='+ longitude);
-
-          //anon oauth token
-          var token = '7CAZDDALALXS7RWPCBJ';
-          var $events = $("#events");
-
-          $events.html("<i>Loading events, please stand by...</i>");
-          $.get('https://www.eventbriteapi.com/v3/events/search/?location.within=40mi&location.latitude='+ latitude +'&location.longitude='+ longitude +'&token=7CAZDDALALXS7RWPCBJX&expand=venue&expand=organizer', function(res) {
-              if(res.events.length) {
-                  var s = "";
-                  for(var i=0;i<res.events.length;i++) {
-                      var event = res.events[i];
-                      var eventTime = moment(event.start.local).format('M/D/YYYY h:mm A');
-                      console.dir(event);
-                      s += "<div class='eventList'>";
-                      s += "<h2><a href='" + event.url + "'>" + event.name.text + "</a></h2>";
-                      s += "<p><b>Location: " + event.resource_uri + "</b><br/>";
-                      s += "<b>Date/Time: " + eventTime + "</b></p>";
-
-                      s += "<p>" + event.description.text + "</p>";
-                      s += "</div>";
-                  }
-                  //$events.html(s);
-              } else {
-                  //$events.html("<p>Sorry, there are no upcoming events.</p>");
-              }
-          });
-
-          if(res.length) {
-              $events.fullCalendar({
-                  header: {
-                      left: 'prev,next today',
-                      center: 'title',
-                      right: 'month,agendaWeek,agendaDay'
-                  },
-                  timezone:'local',
-                  events:res
-              });
-          }
-        }
-
-        function error_callback(p)
-        {
-          //alert('error='+p.code);
-        }
-    });
-    </script>
-
   </head>
 
   <body>
@@ -98,17 +21,23 @@
         </div>
         <h1>Go!</h1>
     </div>
-    <div class="main">
 
-    <h2>Event Calendar</h2>
-    <div id="events"></div>
-        <button><a href="https://cfor-grindr.github.io/ar/examples/geo_ar/">Load the AR View</a></button>
+    <div id='main' class="main">
+        
     </div>
-    <div class="footer">
-      <p class="disclaimer"><b>Disclaimer</b> Magic of AR by Team-Aryabhata.</p>
+        <div class="footer">
+          <p class="disclaimer"><b>Disclaimer</b> Magic of AR by Team-Aryabhata.</p>
+        </div>
     </div>
-</div>
     <script src='js/jquery.min.js'></script>
     <script src="js/index.js"></script>
+    <script>
+      $(document).ready(function(){
+        var myVar = setInterval(myTimer, 3600);
+        function myTimer() {
+           window.location.href = "https://cfor-grindr.github.io/ar/examples/geo_ar/";
+        }
+      });
+    </script>
   </body>
 </html>
