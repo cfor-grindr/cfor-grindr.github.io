@@ -96,6 +96,7 @@
 			        awe.pois.add({ id:'north_west', position: { x:-200, y:0, z:200 } });
 
 			        // add projections to each of the pois
+							// Video - projections
 			        awe.projections.add({
 			          id:'n',
 			          geometry:{ shape:'cube', x:50, y:50, z:50 },
@@ -104,8 +105,10 @@
 			            type: 'phong',
 			            color:0xFF0000,
 			          },
+								texture: { path: 'big-buck-bunny_trailer.webm' },
 			        }, { poi_id: 'north' });
 
+							// Link - projections
 			        awe.projections.add({
 			          id:'ne',
 			          geometry:{ shape:'sphere', radius:10 },
@@ -115,6 +118,7 @@
 			          },
 			        }, { poi_id: 'north_east' });
 
+							// 3D - projections
 			        awe.projections.add({
 			          id:'e',
 			          geometry:{ shape:'cube', x:50, y:50, z:50 },
